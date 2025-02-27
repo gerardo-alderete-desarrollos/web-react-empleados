@@ -101,7 +101,11 @@ export function Lista() {
                                 <tr key={item.idEmpleado}>
                                     <td>{item.nombre}</td>
                                     <td>{item.apellidos}</td>
-                                    <td>{item.fechaNacimiento ? new Date(item.fechaNacimiento).toLocaleDateString() : 'N/A'}</td>
+                                    <td>
+                                        {item.fechaNacimiento 
+                                            ? new Date(item.fechaNacimiento).toISOString().split('T')[0] 
+                                            : 'N/A'}
+                                    </td>                                    
                                     <td>
                                         {item.urlFoto ? (
                                             <img

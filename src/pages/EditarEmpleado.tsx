@@ -85,7 +85,7 @@ export function EditarEmpleado() {
                          </FormGroup>
                          <FormGroup>
                               <Label>Fecha de Nacimiento</Label>
-                              <Input type="date" name="fechaNacimiento" onChange={inputChangeValue} value={empleado.fechaNacimiento ? new Date(empleado.fechaNacimiento).toISOString().split('T')[0] : ''} />
+                              <Input type="date" name="fechaNacimiento" onChange={inputChangeValue} value={empleado.fechaNacimiento ? new Date(empleado.fechaNacimiento).toISOString().split('T')[0]  : ''} />
                          </FormGroup>
                          <FormGroup>
                               <Label>UrlFoto</Label>
