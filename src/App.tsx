@@ -5,7 +5,6 @@ import { NuevoEmpleado } from "./pages/NuevoEmpleado";
 import { EditarEmpleado } from "./pages/EditarEmpleado";
 import { Home } from "./pages/Home";
 import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
 import { Upload } from "./pages/Upload";
 import Header from "./components/Header";
 
