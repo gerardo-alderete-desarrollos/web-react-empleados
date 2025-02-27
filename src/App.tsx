@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import { Upload } from "./pages/Upload";
+import Header from "./components/Header";
 
 // 1️⃣ Contexto de autenticación
 interface AuthContextType {
@@ -56,6 +57,8 @@ function App() {
   return (
     <AuthProvider>
       <HashRouter>
+      <Header /> 
+      <main>
         <Routes>
           <Route path="/auth" element={<Login />} />
           <Route
@@ -100,6 +103,7 @@ function App() {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+      </main>
       </HashRouter>
     </AuthProvider>
   );

@@ -27,10 +27,10 @@ export function NuevoEmpleado() {
   };
 
   const handleDateChange = (date: Date | null) => {
-    setFechaNacimiento(date);
+    setFechaNacimiento(date); 
     setEmpleado((prev) => ({
       ...prev, 
-      fechaNacimiento: date ? new Date(date).toISOString().split("T")[0].replace(/-/g, "/") : "" // Asegura que la fecha esté en formato string
+      fechaNacimiento: date ?  new Date(date).toISOString().split('T')[0] : '' // Asegura que la fecha esté en formato string
     }));
   };
 

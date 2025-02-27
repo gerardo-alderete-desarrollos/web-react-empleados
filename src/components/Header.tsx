@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md" className="mb-4">
+      <Navbar color="light" light expand="md" className="mb-4 fixed-top">
         <NavbarBrand href="/">Sistema de Empleados</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

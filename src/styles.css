@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    background-color: #121212;
+    color: white;
+  }
+  
+  input, textarea, select {
+    background-color: #333;
+    color: white;
+  }
+  
+  .form-control:focus {
+    border-color: #6200ea;
+    background-color: #333;
+  }
+  
+  .btn-primary {
+    background-color: #6200ea;
+    border-color: #6200ea;
+  }
+  
+  .btn-secondary {
+    background-color: #444;
+    border-color: #444;
+  }
+  
