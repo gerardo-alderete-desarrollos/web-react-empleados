@@ -1,8 +1,16 @@
 /* styles.css */
-body {
+  body {
     background-color: #121212;
     color: white;
   }
+  
+  .dark-mode {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   
   input, textarea, select {
     background-color: #333;
@@ -22,5 +30,10 @@ body {
   .btn-secondary {
     background-color: #444;
     border-color: #444;
+  }
+
+  .container{
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
   

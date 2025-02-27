@@ -5,8 +5,9 @@ import { NuevoEmpleado } from "./pages/NuevoEmpleado";
 import { EditarEmpleado } from "./pages/EditarEmpleado";
 import { Home } from "./pages/Home";
 import Login from "./pages/Login";
-import { Upload } from "./pages/Upload";
+import Upload from "./pages/Upload";
 import Header from "./components/Header";
+import "./styles.css";
 
 // 1️⃣ Contexto de autenticación
 interface AuthContextType {
@@ -57,7 +58,7 @@ function App() {
     <AuthProvider>
       <HashRouter>
       <Header /> 
-      <main>
+      <main className="container">
         <Routes>
           <Route path="/auth" element={<Login />} />
           <Route

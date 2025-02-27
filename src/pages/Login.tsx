@@ -70,7 +70,7 @@ const Login = () => {
 
   return (
     <div className="dark-mode">
-      <Container className="mt-5">
+      <Container>
         <Row className="justify-content-center">
           <Col xs={12} sm={10} md={8} lg={6}>
             <Card className="bg-dark text-white">
@@ -125,24 +125,6 @@ const Login = () => {
           </Col>
         </Row>
       </Container>
-
-      {/* Estilos para el modo oscuro */}
-      <style>
-        {`
-          body {
-            background-color: #121212;
-            color: white;
-          }
-          .dark-mode {
-            background-color: #121212;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-        `}
-      </style>
     </div>
   );
 };

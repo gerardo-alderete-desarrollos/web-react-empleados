@@ -4,44 +4,53 @@ import {
   Navbar,
   NavbarToggler,
   NavbarBrand,
-  Nav,
+  Nav, 
   NavItem,
-  NavLink
+  NavLink,
+  Button
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../App';
 
 const Header = () => {
-  // Estado para controlar la apertura/cierre del menú en dispositivos móviles
   const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(prev => !prev);
+  const { logout, isAuthenticated } = useAuth();
+  const location = useLocation();
 
-  // Función para alternar el estado del menú
-  const toggle = () => setIsOpen(!isOpen);
-
-  // Array con los elementos del menú
   const menuItems = [
     { route: '/home', label: 'Home' },
     { route: '/employees', label: 'Employees' },
     { route: '/upload', label: 'Upload' },
   ];
 
+  if (!isAuthenticated) return null; // No mostrar el Navbar si el usuario no está autenticado
+
   return (
-    <div>
-      <Navbar color="light" light expand="md" className="mb-4 fixed-top">
-        <NavbarBrand href="/">Sistema de Empleados</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            {menuItems.map((item, index) => (
-              <NavItem key={index}>
-                <NavLink tag={Link} to={item.route}>
-                  {item.label}
-                </NavLink>
-              </NavItem>
-            ))}
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
+    <Navbar color="light" light expand="md" className="mb-4 fixed-top shadow">
+      <NavbarBrand tag={Link} to="/">Sistema de Empleados</NavbarBrand>
+      <NavbarToggler onClick={toggle} aria-label="Toggle navigation" />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="ms-auto" navbar>
+          {menuItems.map(({ route, label }) => (
+            <NavItem key={route}>
+              <NavLink
+                tag={Link}
+                to={route}
+                aria-current={location.pathname === route ? 'page' : undefined}
+              >
+                {label}
+              </NavLink>
+            </NavItem>
+          ))}
+          <NavItem className="ms-3">
+            <Button color="outline-danger" onClick={logout}>
+              Cerrar Sesión
+            </Button>
+          </NavItem>
+        </Nav>
+      </Collapse>
+    </Navbar>
   );
 };
 
